@@ -1,0 +1,10 @@
+# ==========================================================================
+# ReLove Soul Finds — Cloudflare Pages Configuration
+# Deploy with: npx wrangler pages deploy dist/public
+# ==========================================================================
+
+name = "relove-soul-finds"
+compatibility_date = "2024-01-01"
+
+[site]
+bucket = "./dist/public"
