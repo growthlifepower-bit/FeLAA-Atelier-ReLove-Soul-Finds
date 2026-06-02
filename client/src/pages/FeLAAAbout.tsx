@@ -180,7 +180,11 @@ export default function FeLAAAbout() {
 
           {/* CTA */}
           <div className="text-center pt-8">
-            <a href="/#/shop">
+            <a
+              href="https://atelier.fellaboutique.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <button
                 className="px-8 py-3 font-bold uppercase text-sm text-white flex items-center gap-2 mx-auto"
                 style={{ backgroundColor: "oklch(0.35 0.05 40)" }}
