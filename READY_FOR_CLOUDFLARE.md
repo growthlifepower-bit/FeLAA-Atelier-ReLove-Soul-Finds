@@ -13,7 +13,7 @@ Your project is now fully configured for production deployment on Cloudflare Pag
 ### 2. Cloudflare Pages Configuration
 - **`wrangler.toml`** - Updated with production settings
   - Production branch set to `main`
-  - Build output directory: `dist/public`
+  - Build output directory: `public`
   - Workers dev disabled for production
 
 ### 3. Request Routing & Caching

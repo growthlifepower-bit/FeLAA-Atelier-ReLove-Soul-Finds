@@ -25,7 +25,7 @@
 
 ### Phase 3: Build Configuration (5 minutes)
 - [ ] Build command: `npm run build:prod`
-- [ ] Build output directory: `dist/public`
+- [ ] Build output directory: `public`
 - [ ] **DO NOT add root_dir** (we're using the project root)
 
 ### Phase 4: Environment Variables (5 minutes)

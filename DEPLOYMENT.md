@@ -42,7 +42,7 @@ When setting up the Pages project:
 npm run build:prod
 ```
 
-**Build output directory:** `dist/public`
+**Build output directory:** `public`
 
 **Environment variables (add these):**
 ```
