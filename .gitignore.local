@@ -1,0 +1,8 @@
+# Local environment
+.env.production
+.env.production.local
+.env.*.local
+
+# Cloudflare
+.wrangler/
+dist/
