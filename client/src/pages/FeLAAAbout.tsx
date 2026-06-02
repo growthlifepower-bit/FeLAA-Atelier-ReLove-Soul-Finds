@@ -181,7 +181,7 @@ export default function FeLAAAbout() {
           {/* CTA */}
           <div className="text-center pt-8">
             <a
-              href="https://atelier.fellaboutique.com"
+              href="https://atelier.felaaboutique.com"
               target="_blank"
               rel="noopener noreferrer"
             >
