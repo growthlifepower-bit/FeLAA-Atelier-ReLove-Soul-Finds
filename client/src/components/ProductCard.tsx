@@ -26,7 +26,7 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
     e.stopPropagation();
     addItem(product);
     toast.success(`${product.name} added to cart!`, {
-      description: `$${product.price.toFixed(2)}`,
+      description: `£${product.price.toFixed(2)}`,
       duration: 2500,
     });
   }
@@ -151,14 +151,14 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
                   color: 'oklch(0.55 0.14 38)',
                 }}
               >
-                ${product.price}
+                £{product.price}
               </span>
               {product.originalPrice && (
                 <span
                   className="text-xs line-through"
                   style={{ color: 'oklch(0.60 0.03 70)' }}
                 >
-                  ${product.originalPrice}
+                  £{product.originalPrice}
                 </span>
               )}
             </div>

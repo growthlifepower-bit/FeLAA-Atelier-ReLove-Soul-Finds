@@ -194,7 +194,7 @@ export default function Cart() {
                       className="text-base font-bold"
                       style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.55 0.14 38)' }}
                     >
-                      ${(product.price * quantity).toFixed(2)}
+                      £{(product.price * quantity).toFixed(2)}
                     </span>
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export default function Cart() {
                     Subtotal ({totalItems} item{totalItems !== 1 ? 's' : ''})
                   </span>
                   <span style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.22 0.04 40)' }}>
-                    ${totalPrice.toFixed(2)}
+                    £{totalPrice.toFixed(2)}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
@@ -237,7 +237,7 @@ export default function Cart() {
                       color: shipping === 0 ? 'oklch(0.45 0.15 145)' : 'oklch(0.22 0.04 40)',
                     }}
                   >
-                    {shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}
+                    {shipping === 0 ? 'FREE' : `£${shipping.toFixed(2)}`}
                   </span>
                 </div>
                 {shipping > 0 && (
@@ -245,7 +245,7 @@ export default function Cart() {
                     className="text-xs"
                     style={{ fontFamily: 'DM Sans, sans-serif', color: 'oklch(0.55 0.14 38)' }}
                   >
-                    Add ${(75 - totalPrice).toFixed(2)} more for free shipping
+                    Add £{(75 - totalPrice).toFixed(2)} more for free shipping
                   </p>
                 )}
               </div>
@@ -264,7 +264,7 @@ export default function Cart() {
                   className="text-xl font-bold"
                   style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.55 0.14 38)' }}
                 >
-                  ${orderTotal.toFixed(2)}
+                  £{orderTotal.toFixed(2)}
                 </span>
               </div>
 

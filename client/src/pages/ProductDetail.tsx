@@ -57,7 +57,7 @@ export default function ProductDetail() {
   function handleAddToCart() {
     addItem(product!);
     toast.success(`${product!.name} added to cart!`, {
-      description: `$${product!.price.toFixed(2)}`,
+      description: `£${product!.price.toFixed(2)}`,
       duration: 2500,
     });
   }
@@ -174,14 +174,14 @@ export default function ProductDetail() {
                 className="text-3xl font-bold"
                 style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.55 0.14 38)' }}
               >
-                ${product.price.toFixed(2)}
+                £{product.price.toFixed(2)}
               </span>
               {product.originalPrice && (
                 <span
                   className="text-lg line-through"
                   style={{ color: 'oklch(0.60 0.03 70)' }}
                 >
-                  ${product.originalPrice.toFixed(2)}
+                  £{product.originalPrice.toFixed(2)}
                 </span>
               )}
               {product.originalPrice && (
@@ -194,7 +194,7 @@ export default function ProductDetail() {
                     border: '1px solid oklch(0.22 0.04 40)',
                   }}
                 >
-                  Save ${product.originalPrice - product.price}
+                  Save £{product.originalPrice - product.price}
                 </span>
               )}
             </div>
