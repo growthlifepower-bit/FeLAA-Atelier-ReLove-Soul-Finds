@@ -11,11 +11,11 @@ import { useState } from 'react';
 
 const NAV_LINKS = [
   { href: '/shop', label: 'Shop All' },
+  { href: '/shop?category=art', label: 'Art' },
   { href: '/shop?category=clothing', label: 'Clothing' },
   { href: '/shop?category=collectibles', label: 'Collectibles' },
-  { href: '/shop?category=toys', label: 'Toys' },
-  { href: '/shop?category=furniture', label: 'Art & Furniture' },
-  { href: '/felaa', label: 'FeLAA Atelier' },
+  { href: '/shop?category=furniture', label: 'Furniture' },
+  { href: '/felaa', label: 'Jewelry & FeLAA Atelier' },
 ]
 
 export default function TopNav() {

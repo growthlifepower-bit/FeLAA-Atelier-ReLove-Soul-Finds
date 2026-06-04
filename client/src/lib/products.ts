@@ -3,7 +3,7 @@
 // Mock product catalog for all four categories
 // ==========================================================================
 
-export type Category = 'all' | 'clothing' | 'collectibles' | 'toys' | 'furniture';
+export type Category = 'all' | 'clothing' | 'collectibles' | 'art' | 'furniture';
 
 export interface Product {
   id: string;
@@ -213,7 +213,7 @@ export const PRODUCTS: Product[] = [
     name: 'Tin Wind-Up Robot',
     price: 75,
     originalPrice: 110,
-    category: 'toys',
+    category: 'art',
     description: 'A classic 1950s tin wind-up robot in red and silver. Still winds and walks! A true collector\'s piece.',
     condition: 'Good',
     era: '1950s',
@@ -225,7 +225,7 @@ export const PRODUCTS: Product[] = [
     id: 't2',
     name: 'Wooden Pull-Along Duck',
     price: 35,
-    category: 'toys',
+    category: 'art',
     description: 'Charming hand-painted wooden pull-along duck with rolling wheels. A beloved nursery classic.',
     condition: 'Good',
     era: '1960s',
@@ -237,7 +237,7 @@ export const PRODUCTS: Product[] = [
     id: 't3',
     name: 'Painted Wooden Building Blocks Set',
     price: 42,
-    category: 'toys',
+    category: 'art',
     description: 'Complete set of 24 hand-painted wooden building blocks in primary colors. Original box included.',
     condition: 'Good',
     era: '1960s',
@@ -250,7 +250,7 @@ export const PRODUCTS: Product[] = [
     name: 'Cast Iron Dump Truck',
     price: 58,
     originalPrice: 80,
-    category: 'toys',
+    category: 'art',
     description: 'Heavy cast iron dump truck with working tipping bed. Original red paint with natural patina.',
     condition: 'Fair',
     era: '1940s',
@@ -261,7 +261,7 @@ export const PRODUCTS: Product[] = [
     id: 't5',
     name: 'Vintage Tin Tea Set',
     price: 48,
-    category: 'toys',
+    category: 'art',
     description: 'Complete 12-piece tin lithograph tea set with floral motif. Teapot, cups, saucers, and tray.',
     condition: 'Good',
     era: '1950s',
@@ -272,7 +272,7 @@ export const PRODUCTS: Product[] = [
     id: 't6',
     name: 'Steiff Teddy Bear',
     price: 95,
-    category: 'toys',
+    category: 'art',
     description: 'Beloved Steiff teddy bear with button in ear. Mohair fur, glass eyes, jointed limbs. Loved but sound.',
     condition: 'Loved',
     era: '1960s',
@@ -378,19 +378,19 @@ export const CATEGORIES = [
     emoji: '🏺',
   },
   {
-    id: 'toys' as const,
-    label: 'Vintage Toys',
-    shortLabel: 'Toys',
-    description: 'Nostalgic playthings & rarities',
+    id: 'art' as const,
+    label: 'Art',
+    shortLabel: 'Art',
+    description: 'Upcycled art, objects & artefacts',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/category-toys-DyYCqVoveHMpK4ZA2YE4Sm.webp',
     count: 6,
-    emoji: '🤖',
+    emoji: '🎨',
   },
   {
     id: 'furniture' as const,
-    label: 'Art & Furniture',
+    label: 'Furniture',
     shortLabel: 'Furniture',
-    description: 'DIY art & upcycled pieces',
+    description: 'Upcycled & restored furniture pieces',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/category-furniture-BvHywFPFVyBJFJWWNCgXTp.webp',
     count: 6,
     emoji: '🪑',
