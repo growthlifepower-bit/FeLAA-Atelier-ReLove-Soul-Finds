@@ -16,6 +16,7 @@ export interface Product {
   era: string;
   image: string;
   tags: string[];
+  stripeLink?: string;
   isFeatured?: boolean;
   isNew?: boolean;
   isSold?: boolean;
@@ -61,15 +62,16 @@ export const PRODUCTS: Product[] = [
   // CLOTHING
   {
     id: 'c1',
-    name: 'Hand-Embroidered Denim Jacket',
+    name: '80s Surface Geo-Stitched Denim Jacket',
     price: 68,
     originalPrice: 120,
     category: 'clothing',
-    description: 'A beautifully upcycled 1980s Levi\'s denim jacket with hand-embroidered floral motifs on the back and sleeves. One of a kind.',
+    description: 'A beautifully upcycled 1980s denim jacket with hand-embroidered geometric couch-stitch of graphic text. One of a kind.',
     condition: 'Excellent',
     era: '1980s',
     image: IMAGES.clothing[0],
-    tags: ['denim', 'embroidered', 'upcycled', 'Levi\'s'],
+    tags: ['denim', 'embroidered', 'upcycled', 'geometric'],
+    stripeLink: 'https://buy.stripe.com/aFa00l77Q7ao4vB4H41gs06',
     isFeatured: true,
     isNew: true,
   },
@@ -83,12 +85,13 @@ export const PRODUCTS: Product[] = [
     era: '1970s',
     image: IMAGES.clothing[1],
     tags: ['dress', 'floral', '70s', 'boho'],
+    stripeLink: 'https://buy.stripe.com/dRmdRbgIqamA7HN0qO1gs02',
     isFeatured: true,
   },
   {
     id: 'c3',
     name: 'Patchwork Corduroy Blazer',
-    price: 55,
+    price: 65,
     originalPrice: 85,
     category: 'clothing',
     description: 'A rich patchwork blazer in terracotta, navy, and mustard corduroy panels. Fully lined. Size L.',
@@ -96,41 +99,45 @@ export const PRODUCTS: Product[] = [
     era: '1990s',
     image: IMAGES.clothing[2],
     tags: ['blazer', 'corduroy', 'patchwork', 'upcycled'],
+    stripeLink: 'https://buy.stripe.com/bJe14pcsagKY6DJ7Tg1gs05',
   },
   {
     id: 'c4',
-    name: 'Crocheted Granny Square Vest',
+    name: 'Line Knit Vest',
     price: 38,
     category: 'clothing',
-    description: 'Hand-crocheted granny square vest in cream, rust, and mustard. Bohemian and one-of-a-kind. Size S/M.',
+    description: 'Circular-knitted vest in cream, rust, and mustard. Bohemian and one-of-a-kind. Size S/M.',
     condition: 'Excellent',
     era: '1970s',
     image: IMAGES.clothing[3],
-    tags: ['crochet', 'vest', 'handmade', 'boho'],
+    tags: ['knit', 'vest', 'handmade', 'boho'],
+    stripeLink: 'https://buy.stripe.com/dRm5kFbo63Ycgej4H41gs04',
     isNew: true,
   },
   {
     id: 'c5',
-    name: 'Vintage Linen Midi Skirt',
-    price: 32,
+    name: 'Vintage Denim Frill Skirt',
+    price: 38,
     category: 'clothing',
-    description: 'Flowing linen midi skirt in warm sand with hand-stitched hem detail. Elastic waist. Size S-M.',
+    description: 'Black denim midi skirt with asymmetrical frill hemline. Size S-M.',
     condition: 'Good',
     era: '1980s',
     image: IMAGES.clothing[4],
-    tags: ['skirt', 'linen', 'midi', 'natural'],
+    tags: ['skirt', 'denim', 'midi', 'frill'],
+    stripeLink: 'https://buy.stripe.com/cNi5kFbo652g1jp5L81gs03',
   },
   {
     id: 'c6',
-    name: 'Oversized Knit Cardigan',
-    price: 42,
+    name: 'Long Knit Cardigan',
+    price: 52,
     originalPrice: 60,
     category: 'clothing',
-    description: 'Chunky oversized cardigan in warm oatmeal with wooden buttons. Cozy and timeless.',
+    description: 'Oversized cardigan in apple green and baby pink with wooden buttons. Cozy and timeless. Size L.',
     condition: 'Good',
     era: '1990s',
     image: IMAGES.clothing[5],
     tags: ['cardigan', 'knit', 'oversized', 'cozy'],
+    stripeLink: 'https://buy.stripe.com/14A14pfEmeCQ8LR8Xk1gs07',
   },
 
   // COLLECTIBLES
