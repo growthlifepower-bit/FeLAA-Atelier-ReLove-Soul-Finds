@@ -25,7 +25,7 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
     e.preventDefault();
     e.stopPropagation();
     addItem(product);
-    toast.success(`${product.name} added to cart!`, {
+    toast.success(`${product.name} claimed!`, {
       description: `£${product.price.toFixed(2)}`,
       duration: 2500,
     });
@@ -173,17 +173,17 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
                 color: 'oklch(0.97 0.02 85)',
                 border: '1.5px solid oklch(0.22 0.04 40)',
               }}
-              aria-label={inCart ? 'In cart' : 'Add to cart'}
+              aria-label={inCart ? 'Claimed' : 'Claim this piece'}
             >
               {inCart ? (
                 <>
                   <Check size={12} />
-                  <span className="hidden sm:inline">In Cart</span>
+                  <span className="hidden sm:inline">Claimed</span>
                 </>
               ) : (
                 <>
                   <ShoppingBag size={12} />
-                  <span className="hidden sm:inline">Add</span>
+                  <span className="hidden sm:inline">Claim</span>
                 </>
               )}
             </button>

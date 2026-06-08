@@ -56,7 +56,7 @@ export default function ProductDetail() {
 
   function handleAddToCart() {
     addItem(product!);
-    toast.success(`${product!.name} added to cart!`, {
+    toast.success(`${product!.name} claimed!`, {
       description: `£${product!.price.toFixed(2)}`,
       duration: 2500,
     });
@@ -263,12 +263,12 @@ export default function ProductDetail() {
                 {inCart ? (
                   <>
                     <Check size={16} />
-                    In Cart — Add Again
+                    Claimed — Claim Another
                   </>
                 ) : (
                   <>
                     <ShoppingBag size={16} />
-                    Add to Cart
+                    Claim This Piece
                   </>
                 )}
               </button>
