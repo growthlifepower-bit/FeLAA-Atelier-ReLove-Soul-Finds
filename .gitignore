@@ -14,6 +14,17 @@ build/
 .env.test.local
 .env.production.local
 
+# Claude Code local config
+.claude/
+
+# Dev/deployment notes (not part of the shipped product)
+CLOUDFLARE_DEPLOY.md
+CLOUDFLARE_DEPLOYMENT.md
+CLOUDFLARE_SETUP_CHECKLIST.md
+DEPLOYMENT.md
+READY_FOR_CLOUDFLARE.md
+ideas.md
+
 # IDE and editor files
 .vscode/
 .idea/
