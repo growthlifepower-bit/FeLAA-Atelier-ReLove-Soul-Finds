@@ -6,7 +6,7 @@
 
 import { useCart } from '@/contexts/CartContext';
 import { ShoppingBag, Search, Heart, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'wouter';
+import { Link, useLocation, useSearch } from 'wouter';
 import { useState } from 'react';
 
 const NAV_LINKS = [
@@ -20,6 +20,8 @@ const NAV_LINKS = [
 
 export default function TopNav() {
   const [location] = useLocation();
+  const searchStr = useSearch();
+  const currentCategory = new URLSearchParams(searchStr).get('category');
   const { totalItems } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -104,7 +106,9 @@ export default function TopNav() {
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map(({ href, label, external }) => {
-            const isActive = !external && (location === href || (href !== '/shop' && location.startsWith(href.split('?')[0])));
+            const [hrefPath, hrefQuery] = href.split('?');
+            const hrefCategory = hrefQuery ? new URLSearchParams(hrefQuery).get('category') : null;
+            const isActive = !external && location === hrefPath && hrefCategory === currentCategory;
             const className = "px-3 py-1.5 text-sm font-medium rounded-sm transition-all duration-150";
             const style = {
               fontFamily: 'DM Sans, sans-serif',

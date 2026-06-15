@@ -132,7 +132,7 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
 
           {/* Name */}
           <h3
-            className="text-sm font-semibold leading-snug line-clamp-2"
+            className="text-sm font-semibold leading-snug line-clamp-2 min-h-10"
             style={{
               fontFamily: 'Fraunces, serif',
               color: 'oklch(0.22 0.04 40)',
