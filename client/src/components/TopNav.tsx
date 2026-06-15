@@ -15,7 +15,7 @@ const NAV_LINKS = [
   { href: '/shop?category=clothing', label: 'Clothing' },
   { href: '/shop?category=collectibles', label: 'Collectibles' },
   { href: '/shop?category=furniture', label: 'Furniture' },
-  { href: '/felaa', label: 'Jewelry & FeLAA Atelier' },
+  { href: 'https://atelier.growthlifepower.com', label: 'Jewelry & FeLAA Atelier', external: true },
 ]
 
 export default function TopNav() {
@@ -103,20 +103,24 @@ export default function TopNav() {
 
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center gap-1">
-          {NAV_LINKS.map(({ href, label }) => {
-            const isActive = location === href || (href !== '/shop' && location.startsWith(href.split('?')[0]));
+          {NAV_LINKS.map(({ href, label, external }) => {
+            const isActive = !external && (location === href || (href !== '/shop' && location.startsWith(href.split('?')[0])));
+            const className = "px-3 py-1.5 text-sm font-medium rounded-sm transition-all duration-150";
+            const style = {
+              fontFamily: 'DM Sans, sans-serif',
+              color: isActive ? 'oklch(0.97 0.02 85)' : 'oklch(0.35 0.05 40)',
+              background: isActive ? 'oklch(0.55 0.14 38)' : 'transparent',
+              border: isActive ? '1.5px solid oklch(0.22 0.04 40)' : '1.5px solid transparent',
+            };
+            if (external) {
+              return (
+                <a key={href} href={href} target="_blank" rel="noopener noreferrer" className={className} style={style}>
+                  {label}
+                </a>
+              );
+            }
             return (
-              <Link
-                key={href}
-                href={href}
-                className="px-3 py-1.5 text-sm font-medium rounded-sm transition-all duration-150"
-                style={{
-                  fontFamily: 'DM Sans, sans-serif',
-                  color: isActive ? 'oklch(0.97 0.02 85)' : 'oklch(0.35 0.05 40)',
-                  background: isActive ? 'oklch(0.55 0.14 38)' : 'transparent',
-                  border: isActive ? '1.5px solid oklch(0.22 0.04 40)' : '1.5px solid transparent',
-                }}
-              >
+              <Link key={href} href={href} className={className} style={style}>
                 {label}
               </Link>
             );
@@ -181,21 +185,26 @@ export default function TopNav() {
             background: 'oklch(0.22 0.04 40)',
           }}
         >
-          {NAV_LINKS.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-3 text-sm font-medium border-b transition-colors duration-150 hover:opacity-80"
-              style={{
-                fontFamily: 'DM Sans, sans-serif',
-                color: 'oklch(0.93 0.04 80)',
-                borderColor: 'oklch(0.35 0.05 40)',
-              }}
-            >
-              {label}
-            </Link>
-          ))}
+          {NAV_LINKS.map(({ href, label, external }) => {
+            const className = "block px-4 py-3 text-sm font-medium border-b transition-colors duration-150 hover:opacity-80";
+            const style = {
+              fontFamily: 'DM Sans, sans-serif',
+              color: 'oklch(0.93 0.04 80)',
+              borderColor: 'oklch(0.35 0.05 40)',
+            };
+            if (external) {
+              return (
+                <a key={href} href={href} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className={className} style={style}>
+                  {label}
+                </a>
+              );
+            }
+            return (
+              <Link key={href} href={href} onClick={() => setMobileMenuOpen(false)} className={className} style={style}>
+                {label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </header>

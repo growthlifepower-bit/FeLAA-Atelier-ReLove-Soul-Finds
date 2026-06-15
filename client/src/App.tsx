@@ -44,9 +44,12 @@ function PlaceholderPage({ title }: { title: string }) {
 }
 
 function Router() {
+  // atelier.growthlifepower.com is a dedicated custom domain for the FeLAA Atelier page
+  const isAtelierDomain = typeof window !== 'undefined' && window.location.hostname === 'atelier.growthlifepower.com';
+
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={isAtelierDomain ? FeLAAAbout : Home} />
       <Route path="/shop" component={Shop} />
       <Route path="/product/:id" component={ProductDetail} />
       <Route path="/cart" component={Cart} />
