@@ -3,7 +3,7 @@
 // Mock product catalog for all four categories
 // ==========================================================================
 
-export type Category = 'all' | 'clothing' | 'collectibles' | 'art' | 'furniture';
+export type Category = 'all' | 'clothing' | 'collectibles' | 'art' | 'furniture' | 'jewelry';
 
 export interface Product {
   id: string;
@@ -368,7 +368,7 @@ export const PRODUCTS: Product[] = [
 export const CATEGORIES = [
   {
     id: 'clothing' as const,
-    label: 'Vintage Clothing',
+    label: 'Relove Soul Finds',
     shortLabel: 'Clothing',
     description: 'Upcycled & one-of-a-kind wearables',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/category-clothing-ZsDtn9Pap78Stfmg9GRXkD.webp',
@@ -377,7 +377,7 @@ export const CATEGORIES = [
   },
   {
     id: 'collectibles' as const,
-    label: 'Antique Collectibles',
+    label: 'Soulful Collectibles',
     shortLabel: 'Collectibles',
     description: 'Curated treasures with history',
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/category-collectibles-GzQTNtU6rrhhTHhonVz4ss.webp',
@@ -401,6 +401,15 @@ export const CATEGORIES = [
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/category-furniture-BvHywFPFVyBJFJWWNCgXTp.webp',
     count: 6,
     emoji: '🪑',
+  },
+  {
+    id: 'jewelry' as const,
+    label: 'Jewelry',
+    shortLabel: 'Jewelry',
+    description: 'Curated vintage & handcrafted jewelry',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/category-clothing-ZsDtn9Pap78Stfmg9GRXkD.webp',
+    count: 0,
+    emoji: '💍',
   },
 ];
 

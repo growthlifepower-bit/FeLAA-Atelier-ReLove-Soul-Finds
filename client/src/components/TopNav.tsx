@@ -15,7 +15,9 @@ const NAV_LINKS = [
   { href: '/shop?category=clothing', label: 'Clothing' },
   { href: '/shop?category=collectibles', label: 'Collectibles' },
   { href: '/shop?category=furniture', label: 'Furniture' },
-  { href: '/felaa', label: 'Jewelry & FeLAA Atelier' },
+  { href: '/shop?category=jewelry', label: 'Jewelry' },
+  { href: '/relove', label: 'Relove Soul Finds' },
+  { href: '/felaa', label: 'FeLAA Atelier' },
 ]
 
 export default function TopNav() {
@@ -43,61 +45,25 @@ export default function TopNav() {
               border: '1.5px solid oklch(0.22 0.04 40)',
             }}
           >
-            R
+            F
           </div>
-          {/* Desktop: full brand name with FeLAA parent brand */}
-          <span className="leading-tight hidden sm:flex items-baseline gap-1.5">
-            <span
-              className="text-sm font-semibold tracking-wide"
-              style={{
-                fontFamily: 'Fraunces, serif',
-                color: 'oklch(0.55 0.14 38)',
-              }}
-            >
-              FeLAA
-            </span>
-            <span
-              className="text-xs font-light"
-              style={{ color: 'oklch(0.50 0.04 55)' }}
-            >
-              |
-            </span>
-            <span
-              className="text-lg font-bold"
-              style={{
-                fontFamily: 'Fraunces, serif',
-                color: 'oklch(0.22 0.04 40)',
-              }}
-            >
-              ReLove Soul Finds
-            </span>
+          <span
+            className="text-lg font-bold leading-tight hidden sm:block"
+            style={{
+              fontFamily: 'Fraunces, serif',
+              color: 'oklch(0.22 0.04 40)',
+            }}
+          >
+            FeLAÁ Boutique
           </span>
-          {/* Mobile: compact version */}
-          <span className="leading-tight sm:hidden flex items-baseline gap-1">
-            <span
-              className="text-xs font-semibold tracking-wide"
-              style={{
-                fontFamily: 'Fraunces, serif',
-                color: 'oklch(0.55 0.14 38)',
-              }}
-            >
-              FeLAA
-            </span>
-            <span
-              className="text-xs font-light"
-              style={{ color: 'oklch(0.50 0.04 55)' }}
-            >
-              |
-            </span>
-            <span
-              className="text-base font-bold"
-              style={{
-                fontFamily: 'Fraunces, serif',
-                color: 'oklch(0.22 0.04 40)',
-              }}
-            >
-              ReLove
-            </span>
+          <span
+            className="text-base font-bold leading-tight sm:hidden"
+            style={{
+              fontFamily: 'Fraunces, serif',
+              color: 'oklch(0.22 0.04 40)',
+            }}
+          >
+            FeLAÁ
           </span>
         </Link>
 
@@ -109,7 +75,7 @@ export default function TopNav() {
               <Link
                 key={href}
                 href={href}
-                className="px-3 py-1.5 text-sm font-medium rounded-sm transition-all duration-150"
+                className="px-2 py-1.5 text-xs font-medium rounded-sm transition-all duration-150"
                 style={{
                   fontFamily: 'DM Sans, sans-serif',
                   color: isActive ? 'oklch(0.97 0.02 85)' : 'oklch(0.35 0.05 40)',

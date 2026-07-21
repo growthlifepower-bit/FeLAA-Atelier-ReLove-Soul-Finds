@@ -54,6 +54,7 @@ function Router() {
       <Route path="/wishlist" component={Wishlist} />
       <Route path="/about" component={FeLAAAbout} />
       <Route path="/felaa" component={FeLAAAbout} />
+      <Route path="/relove" component={FeLAAAbout} />
       <Route path="/contact" component={() => <PlaceholderPage title="Contact" />} />
       <Route path="/shipping" component={() => <PlaceholderPage title="Shipping Info" />} />
       <Route path="/returns" component={() => <PlaceholderPage title="Returns Policy" />} />
