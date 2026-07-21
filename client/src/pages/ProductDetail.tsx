@@ -54,12 +54,16 @@ export default function ProductDetail() {
     .filter(p => p.id !== product.id)
     .slice(0, 4);
 
-  function handleAddToCart() {
-    addItem(product!);
-    toast.success(`${product!.name} claimed!`, {
-      description: `£${product!.price.toFixed(2)}`,
-      duration: 2500,
-    });
+  function handleClaim() {
+    if (product!.stripeLink) {
+      window.open(product!.stripeLink, '_blank', 'noopener,noreferrer');
+    } else {
+      addItem(product!);
+      toast.success(`${product!.name} claimed!`, {
+        description: `£${product!.price.toFixed(2)}`,
+        duration: 2500,
+      });
+    }
   }
 
   function handleShare() {
@@ -251,16 +255,16 @@ export default function ProductDetail() {
             {/* CTA Buttons */}
             <div className="flex gap-3 pt-2">
               <button
-                onClick={handleAddToCart}
+                onClick={handleClaim}
                 className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold transition-all duration-150 active:scale-98"
                 style={{
                   fontFamily: 'DM Sans, sans-serif',
-                  background: inCart ? 'oklch(0.22 0.04 40)' : 'oklch(0.55 0.14 38)',
+                  background: (!product.stripeLink && inCart) ? 'oklch(0.22 0.04 40)' : 'oklch(0.55 0.14 38)',
                   color: 'oklch(0.97 0.02 85)',
                   border: '2px solid oklch(0.22 0.04 40)',
                 }}
               >
-                {inCart ? (
+                {(!product.stripeLink && inCart) ? (
                   <>
                     <Check size={16} />
                     Claimed — Claim Another
