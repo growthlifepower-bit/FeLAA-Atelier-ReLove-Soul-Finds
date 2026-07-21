@@ -374,6 +374,7 @@ export const CATEGORIES = [
     image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/category-clothing-ZsDtn9Pap78Stfmg9GRXkD.webp',
     count: 6,
     emoji: '👗',
+    href: '/relove-soul-finds',
   },
   {
     id: 'collectibles' as const,

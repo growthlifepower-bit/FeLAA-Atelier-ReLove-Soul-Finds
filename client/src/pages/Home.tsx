@@ -265,7 +265,7 @@ export default function Home() {
           {/* Category grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {CATEGORIES.map((cat, i) => (
-              <Link key={cat.id} href={`/shop?category=${cat.id}`}>
+              <Link key={cat.id} href={cat.href ?? `/shop?category=${cat.id}`}>
                 <div
                   className={`group relative overflow-hidden aspect-[3/4] cursor-pointer stamp-card ${categoriesRef.inView ? 'animate-fade-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${i * 80}ms` }}

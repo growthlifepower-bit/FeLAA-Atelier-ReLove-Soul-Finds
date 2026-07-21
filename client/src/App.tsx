@@ -16,6 +16,7 @@ import SearchPage from "@/pages/SearchPage";
 import Shop from "@/pages/Shop";
 import Wishlist from "@/pages/Wishlist";
 import FeLAAAbout from "@/pages/FeLAAAbout";
+import ReloveCollection from "@/pages/ReloveCollection";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -57,7 +58,8 @@ function Router() {
       <Route path="/wishlist" component={Wishlist} />
       <Route path="/about" component={FeLAAAbout} />
       <Route path="/felaa" component={FeLAAAbout} />
-      <Route path="/relove" component={FeLAAAbout} />
+      <Route path="/relove-soul-finds" component={ReloveCollection} />
+      <Route path="/relove" component={ReloveCollection} />
       <Route path="/contact" component={() => <PlaceholderPage title="Contact" />} />
       <Route path="/shipping" component={() => <PlaceholderPage title="Shipping Info" />} />
       <Route path="/returns" component={() => <PlaceholderPage title="Returns Policy" />} />
