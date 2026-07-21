@@ -262,10 +262,10 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Category grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          {/* Category grid — horizontal scroll on mobile, single row on desktop */}
+          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-2 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-5 md:overflow-x-visible">
             {CATEGORIES.map((cat, i) => (
-              <Link key={cat.id} href={cat.href ?? `/shop?category=${cat.id}`}>
+              <Link key={cat.id} href={cat.href ?? `/shop?category=${cat.id}`} className="flex-none w-36 snap-start md:w-auto">
                 <div
                   className={`group relative overflow-hidden aspect-[3/4] cursor-pointer stamp-card ${categoriesRef.inView ? 'animate-fade-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${i * 80}ms` }}
