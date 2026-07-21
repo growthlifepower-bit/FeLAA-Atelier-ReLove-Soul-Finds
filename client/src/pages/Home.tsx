@@ -6,6 +6,19 @@
 
 import ProductCard from '@/components/ProductCard';
 import { CATEGORIES, getFeaturedProducts, getNewArrivals } from '@/lib/products';
+
+const HOME_TILES = [
+  ...CATEGORIES,
+  {
+    id: 'felaa-atelier',
+    label: 'FeLAA Atelier',
+    description: 'Original designs & symbolic pieces',
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/felaa-hero-home-RFYR2z2AugrsBX9BUMSAMi.webp',
+    count: null as number | null,
+    emoji: '✦',
+    href: '/felaa',
+  },
+];
 import { ArrowRight, Recycle, Heart, Sparkles, Package, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'wouter';
 import { useEffect, useRef, useState, useCallback } from 'react';
@@ -262,10 +275,10 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Category grid — horizontal scroll on mobile, single row on desktop */}
-          <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-2 md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-5 md:overflow-x-visible">
-            {CATEGORIES.map((cat, i) => (
-              <Link key={cat.id} href={cat.href ?? `/shop?category=${cat.id}`} className="flex-none w-36 snap-start md:w-auto">
+          {/* Category grid — 2 cols mobile, 3 cols desktop */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {HOME_TILES.map((cat, i) => (
+              <Link key={cat.id} href={cat.href ?? `/shop?category=${cat.id}`}>
                 <div
                   className={`group relative overflow-hidden aspect-[3/4] cursor-pointer stamp-card ${categoriesRef.inView ? 'animate-fade-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${i * 80}ms` }}
@@ -298,7 +311,7 @@ export default function Home() {
                       className="text-[10px] mt-0.5"
                       style={{ fontFamily: 'Courier Prime, monospace', color: 'oklch(0.72 0.14 80)' }}
                     >
-                      {cat.count} items
+                      {cat.count != null ? `${cat.count} items` : 'Explore'}
                     </p>
                   </div>
                 </div>
@@ -327,7 +340,7 @@ export default function Home() {
                 className="text-3xl md:text-4xl font-bold"
                 style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.97 0.02 85)' }}
               >
-                Featured Finds
+                Featured
               </h2>
             </div>
             <Link
