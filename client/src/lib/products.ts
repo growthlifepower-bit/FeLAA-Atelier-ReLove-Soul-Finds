@@ -16,7 +16,7 @@ export interface Product {
   era: string;
   image: string;
   tags: string[];
-  stripeLink?: string;
+  purchaseLink?: string;
   isFeatured?: boolean;
   isNew?: boolean;
   isSold?: boolean;
@@ -71,7 +71,7 @@ export const PRODUCTS: Product[] = [
     era: '1980s',
     image: IMAGES.clothing[0],
     tags: ['denim', 'embroidered', 'upcycled', 'geometric'],
-    stripeLink: 'https://buy.stripe.com/aFa00l77Q7ao4vB4H41gs06',
+    purchaseLink: 'https://buy.stripe.com/aFa00l77Q7ao4vB4H41gs06',
     isFeatured: true,
     isNew: true,
   },
@@ -85,7 +85,7 @@ export const PRODUCTS: Product[] = [
     era: '1970s',
     image: IMAGES.clothing[1],
     tags: ['dress', 'floral', '70s', 'boho'],
-    stripeLink: 'https://buy.stripe.com/dRmdRbgIqamA7HN0qO1gs02',
+    purchaseLink: 'https://buy.stripe.com/dRmdRbgIqamA7HN0qO1gs02',
     isFeatured: true,
   },
   {
@@ -99,7 +99,7 @@ export const PRODUCTS: Product[] = [
     era: '1990s',
     image: IMAGES.clothing[2],
     tags: ['blazer', 'corduroy', 'patchwork', 'upcycled'],
-    stripeLink: 'https://buy.stripe.com/bJe14pcsagKY6DJ7Tg1gs05',
+    purchaseLink: 'https://buy.stripe.com/bJe14pcsagKY6DJ7Tg1gs05',
   },
   {
     id: 'c4',
@@ -111,7 +111,7 @@ export const PRODUCTS: Product[] = [
     era: '1970s',
     image: IMAGES.clothing[3],
     tags: ['knit', 'vest', 'handmade', 'boho'],
-    stripeLink: 'https://buy.stripe.com/dRm5kFbo63Ycgej4H41gs04',
+    purchaseLink: 'https://buy.stripe.com/dRm5kFbo63Ycgej4H41gs04',
     isNew: true,
   },
   {
@@ -124,7 +124,7 @@ export const PRODUCTS: Product[] = [
     era: '1980s',
     image: IMAGES.clothing[4],
     tags: ['skirt', 'denim', 'midi', 'frill'],
-    stripeLink: 'https://buy.stripe.com/cNi5kFbo652g1jp5L81gs03',
+    purchaseLink: 'https://buy.stripe.com/cNi5kFbo652g1jp5L81gs03',
   },
   {
     id: 'c6',
@@ -137,7 +137,7 @@ export const PRODUCTS: Product[] = [
     era: '1990s',
     image: IMAGES.clothing[5],
     tags: ['cardigan', 'knit', 'oversized', 'cozy'],
-    stripeLink: 'https://buy.stripe.com/14A14pfEmeCQ8LR8Xk1gs07',
+    purchaseLink: 'https://buy.stripe.com/14A14pfEmeCQ8LR8Xk1gs07',
   },
 
   // COLLECTIBLES
