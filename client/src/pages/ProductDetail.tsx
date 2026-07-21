@@ -55,8 +55,8 @@ export default function ProductDetail() {
     .slice(0, 4);
 
   function handleClaim() {
-    if (product!.stripeLink) {
-      window.open(product!.stripeLink, '_blank', 'noopener,noreferrer');
+    if (product!.purchaseLink) {
+      window.open(product!.purchaseLink, '_blank', 'noopener,noreferrer');
     } else {
       addItem(product!);
       toast.success(`${product!.name} claimed!`, {
@@ -259,12 +259,12 @@ export default function ProductDetail() {
                 className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold transition-all duration-150 active:scale-98"
                 style={{
                   fontFamily: 'DM Sans, sans-serif',
-                  background: (!product.stripeLink && inCart) ? 'oklch(0.22 0.04 40)' : 'oklch(0.55 0.14 38)',
+                  background: (!product.purchaseLink && inCart) ? 'oklch(0.22 0.04 40)' : 'oklch(0.55 0.14 38)',
                   color: 'oklch(0.97 0.02 85)',
                   border: '2px solid oklch(0.22 0.04 40)',
                 }}
               >
-                {(!product.stripeLink && inCart) ? (
+                {(!product.purchaseLink && inCart) ? (
                   <>
                     <Check size={16} />
                     Claimed — Claim Another

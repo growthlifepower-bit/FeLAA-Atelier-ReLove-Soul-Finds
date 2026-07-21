@@ -24,8 +24,8 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
   function handleClaim(e: React.MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
-    if (product.stripeLink) {
-      window.open(product.stripeLink, '_blank', 'noopener,noreferrer');
+    if (product.purchaseLink) {
+      window.open(product.purchaseLink, '_blank', 'noopener,noreferrer');
     } else {
       addItem(product);
       toast.success(`${product.name} claimed!`, {
@@ -173,13 +173,13 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
               className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium transition-all duration-150 active:scale-95"
               style={{
                 fontFamily: 'DM Sans, sans-serif',
-                background: (!product.stripeLink && inCart) ? 'oklch(0.22 0.04 40)' : 'oklch(0.55 0.14 38)',
+                background: (!product.purchaseLink && inCart) ? 'oklch(0.22 0.04 40)' : 'oklch(0.55 0.14 38)',
                 color: 'oklch(0.97 0.02 85)',
                 border: '1.5px solid oklch(0.22 0.04 40)',
               }}
-              aria-label={(!product.stripeLink && inCart) ? 'Claimed' : 'Claim this piece'}
+              aria-label={(!product.purchaseLink && inCart) ? 'Claimed' : 'Claim this piece'}
             >
-              {(!product.stripeLink && inCart) ? (
+              {(!product.purchaseLink && inCart) ? (
                 <>
                   <Check size={12} />
                   <span className="hidden sm:inline">Claimed</span>
