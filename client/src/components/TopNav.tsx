@@ -16,7 +16,7 @@ const NAV_LINKS = [
   { href: '/shop?category=collectibles', label: 'Collectibles' },
   { href: '/shop?category=furniture', label: 'Furniture' },
   { href: '/shop?category=jewelry', label: 'Jewelry' },
-  { href: '/relove', label: 'Relove Soul Finds' },
+  { href: '/relove-soul-finds', label: 'Relove Soul Finds' },
   { href: '/felaa', label: 'FeLAA Atelier' },
 ]
 
