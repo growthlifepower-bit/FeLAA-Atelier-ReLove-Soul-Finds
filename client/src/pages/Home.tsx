@@ -6,11 +6,33 @@
 
 import ProductCard from '@/components/ProductCard';
 import { CATEGORIES, getFeaturedProducts, getNewArrivals } from '@/lib/products';
-import { ArrowRight, Recycle, Heart, Sparkles, Package } from 'lucide-react';
+import { ArrowRight, Recycle, Heart, Sparkles, Package, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'wouter';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
-const HERO_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/hero-banner-3jgP238RW3WaCGjynGDEQF.webp';
+const SLIDES = [
+  {
+    id: 'felaa',
+    label: '✦ A Symbolic Lifestyle Atelier',
+    headline: ['FeLAA', 'Atelier'],
+    accentIndex: -1,
+    subtext: 'A symbolic lifestyle atelier exploring ritual design, sonic anthropology, contemporary ancestral abstraction, and spiritual folk-modernism.',
+    ctas: [{ label: 'Discover FeLAA Atelier', href: '/felaa', primary: true }],
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/felaa-hero-home-RFYR2z2AugrsBX9BUMSAMi.webp',
+  },
+  {
+    id: 'relove',
+    label: '✦ Treasures with a past',
+    headline: ['ReLove', 'Soul', 'Finds'],
+    accentIndex: 1,
+    subtext: 'Soulful collectibles, upcycled art and apparel, nostalgic toys, and handcrafted + reworked furniture — loved into the future.',
+    ctas: [
+      { label: 'Shop the Collection', href: '/shop', primary: true },
+      { label: 'New Arrivals', href: '/shop?category=clothing', primary: false },
+    ],
+    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/hero-banner-3jgP238RW3WaCGjynGDEQF.webp',
+  },
+];
 
 // Simple intersection observer hook for scroll animations
 function useInView(threshold = 0.1) {
@@ -36,15 +58,38 @@ export default function Home() {
   const newRef = useInView(0.05);
   const aboutRef = useInView(0.1);
 
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  const goToSlide = useCallback((next: number) => {
+    setFading(true);
+    setTimeout(() => {
+      setSlideIndex(next);
+      setFading(false);
+    }, 350);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      goToSlide((slideIndex + 1) % SLIDES.length);
+    }, 7000);
+    return () => clearInterval(timer);
+  }, [slideIndex, goToSlide]);
+
+  const slide = SLIDES[slideIndex];
+
   return (
     <div className="min-h-screen pb-safe">
-      {/* ── HERO ─────────────────────────────────────────────────────────── */}
+      {/* ── HERO CAROUSEL ────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden" style={{ minHeight: '85vh' }}>
-        {/* Background image */}
-        <div className="absolute inset-0">
+        {/* Background image — crossfades on slide change */}
+        <div
+          className="absolute inset-0 transition-opacity duration-700"
+          style={{ opacity: fading ? 0 : 1 }}
+        >
           <img
-            src={HERO_IMAGE}
-            alt="Curated vintage treasures"
+            src={slide.image}
+            alt={slide.id}
             className="w-full h-full object-cover"
           />
           <div
@@ -55,12 +100,15 @@ export default function Home() {
           />
         </div>
 
-        {/* Hero content */}
-        <div className="relative container flex flex-col justify-end h-full" style={{ minHeight: '85vh', paddingBottom: '3rem' }}>
+        {/* Slide content */}
+        <div
+          className="relative container flex flex-col justify-end h-full transition-opacity duration-700"
+          style={{ minHeight: '85vh', paddingBottom: '3rem', opacity: fading ? 0 : 1 }}
+        >
           <div className="max-w-xl">
             {/* Label */}
             <div
-              className="inline-block px-3 py-1 mb-4 text-xs uppercase tracking-widest animate-fade-up"
+              className="inline-block px-3 py-1 mb-4 text-xs uppercase tracking-widest"
               style={{
                 fontFamily: 'Courier Prime, monospace',
                 background: 'oklch(0.72 0.14 80)',
@@ -68,67 +116,104 @@ export default function Home() {
                 border: '1.5px solid oklch(0.22 0.04 40)',
               }}
             >
-              ✦ Treasures with a past
+              {slide.label}
             </div>
 
             {/* Headline */}
             <h1
-              className="text-5xl sm:text-6xl md:text-7xl font-black leading-[0.9] mb-5 animate-fade-up stagger-1"
-              style={{
-                fontFamily: 'Fraunces, serif',
-                color: 'oklch(0.97 0.02 85)',
-                fontStyle: 'italic',
-              }}
+              className="text-5xl sm:text-6xl md:text-7xl font-black leading-[0.9] mb-5"
+              style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.97 0.02 85)', fontStyle: 'italic' }}
             >
-              ReLove<br />
-              <span style={{ color: 'oklch(0.72 0.14 80)' }}>Soul</span><br />
-              Finds
+              {slide.headline.map((word, i) => (
+                <span key={word}>
+                  {i === slide.accentIndex
+                    ? <span style={{ color: 'oklch(0.72 0.14 80)' }}>{word}</span>
+                    : word}
+                  <br />
+                </span>
+              ))}
             </h1>
 
-            {/* Subheadline */}
+            {/* Subtext */}
             <p
-              className="text-base sm:text-lg mb-8 max-w-sm leading-relaxed animate-fade-up stagger-2"
-              style={{
-                fontFamily: 'DM Sans, sans-serif',
-                color: 'oklch(0.88 0.03 80)',
-              }}
+              className="text-base sm:text-lg mb-8 max-w-sm leading-relaxed"
+              style={{ fontFamily: 'DM Sans, sans-serif', color: 'oklch(0.88 0.03 80)' }}
             >
-              Antique collectibles, upcycled vintage clothing, nostalgic toys, and handcrafted furniture — loved into the future.
+              {slide.subtext}
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-3 animate-fade-up stagger-3">
-              <Link
-                href="/shop"
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:gap-3"
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3">
+              {slide.ctas.map(cta => (
+                <Link
+                  key={cta.href}
+                  href={cta.href}
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:gap-3"
+                  style={{
+                    fontFamily: 'DM Sans, sans-serif',
+                    background: cta.primary ? 'oklch(0.55 0.14 38)' : 'transparent',
+                    color: 'oklch(0.97 0.02 85)',
+                    border: cta.primary ? '2px solid oklch(0.97 0.02 85)' : '2px solid oklch(0.97 0.02 85 / 0.6)',
+                  }}
+                >
+                  {cta.label}
+                  {cta.primary && <ArrowRight size={16} />}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Carousel controls */}
+          <div className="absolute bottom-16 right-6 flex flex-col items-end gap-3">
+            {/* Prev / Next arrows */}
+            <div className="flex gap-2">
+              <button
+                onClick={() => goToSlide((slideIndex - 1 + SLIDES.length) % SLIDES.length)}
+                className="w-8 h-8 flex items-center justify-center transition-opacity hover:opacity-80"
                 style={{
-                  fontFamily: 'DM Sans, sans-serif',
-                  background: 'oklch(0.55 0.14 38)',
+                  background: 'oklch(0.22 0.04 40 / 0.6)',
                   color: 'oklch(0.97 0.02 85)',
-                  border: '2px solid oklch(0.97 0.02 85)',
+                  border: '1.5px solid oklch(0.97 0.02 85 / 0.4)',
                 }}
+                aria-label="Previous slide"
               >
-                Shop the Collection
-                <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/shop?category=clothing"
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200"
+                <ChevronLeft size={16} />
+              </button>
+              <button
+                onClick={() => goToSlide((slideIndex + 1) % SLIDES.length)}
+                className="w-8 h-8 flex items-center justify-center transition-opacity hover:opacity-80"
                 style={{
-                  fontFamily: 'DM Sans, sans-serif',
-                  background: 'transparent',
+                  background: 'oklch(0.22 0.04 40 / 0.6)',
                   color: 'oklch(0.97 0.02 85)',
-                  border: '2px solid oklch(0.97 0.02 85 / 0.6)',
+                  border: '1.5px solid oklch(0.97 0.02 85 / 0.4)',
                 }}
+                aria-label="Next slide"
               >
-                New Arrivals
-              </Link>
+                <ChevronRight size={16} />
+              </button>
+            </div>
+            {/* Dots */}
+            <div className="flex gap-1.5">
+              {SLIDES.map((s, i) => (
+                <button
+                  key={s.id}
+                  onClick={() => goToSlide(i)}
+                  className="transition-all duration-300"
+                  style={{
+                    width: i === slideIndex ? '20px' : '8px',
+                    height: '8px',
+                    borderRadius: '4px',
+                    background: i === slideIndex ? 'oklch(0.72 0.14 80)' : 'oklch(0.97 0.02 85 / 0.4)',
+                  }}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
             </div>
           </div>
 
           {/* Scroll indicator */}
           <div
-            className="absolute bottom-6 right-6 hidden md:flex flex-col items-center gap-1 animate-fade-in stagger-4"
+            className="absolute bottom-6 left-6 hidden md:flex flex-col items-start gap-1"
             style={{ color: 'oklch(0.88 0.03 80)' }}
           >
             <span className="text-[10px] uppercase tracking-widest" style={{ fontFamily: 'Courier Prime, monospace' }}>
@@ -329,7 +414,7 @@ export default function Home() {
               className="text-base leading-relaxed"
               style={{ fontFamily: 'DM Sans, sans-serif', color: 'oklch(0.40 0.04 50)' }}
             >
-              ReLove Soul Finds is a curated online thrift store dedicated to giving beautiful objects a second life. We source antique collectibles, upcycle vintage clothing, and rescue furniture — because the best things are the ones that carry a story. Explore FeLAA Atelier for handcrafted patterns, textiles, and couture pieces.
+              FeLAÁ Boutique is home to Relove Soul Finds and FeLAA Atelier — two arms of the same living practice. We source soulful collectibles, upcycle clothing and art, and rescue furniture, because the best things are the ones that carry a story.
             </p>
           </div>
 
@@ -462,13 +547,13 @@ export default function Home() {
                   border: '1.5px solid oklch(0.55 0.14 38)',
                 }}
               >
-                R
+                F
               </div>
               <span
                 className="text-sm font-semibold"
                 style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.93 0.04 80)' }}
               >
-                ReLove Soul Finds
+                FeLAÁ Boutique
               </span>
             </div>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-1">
@@ -493,7 +578,7 @@ export default function Home() {
               className="text-xs opacity-40"
               style={{ fontFamily: 'Courier Prime, monospace', color: 'oklch(0.93 0.04 80)' }}
             >
-              © 2024 ReLove Soul Finds
+              © 2025 FeLAÁ Boutique
             </p>
           </div>
         </div>
