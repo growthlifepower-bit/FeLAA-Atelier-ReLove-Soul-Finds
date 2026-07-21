@@ -21,14 +21,18 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
   const [wishlisted, setWishlisted] = useState(false);
   const inCart = isInCart(product.id);
 
-  function handleAddToCart(e: React.MouseEvent) {
+  function handleClaim(e: React.MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
-    addItem(product);
-    toast.success(`${product.name} claimed!`, {
-      description: `£${product.price.toFixed(2)}`,
-      duration: 2500,
-    });
+    if (product.stripeLink) {
+      window.open(product.stripeLink, '_blank', 'noopener,noreferrer');
+    } else {
+      addItem(product);
+      toast.success(`${product.name} claimed!`, {
+        description: `£${product.price.toFixed(2)}`,
+        duration: 2500,
+      });
+    }
   }
 
   function handleWishlist(e: React.MouseEvent) {
@@ -163,19 +167,19 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
               )}
             </div>
 
-            {/* Add to cart */}
+            {/* Claim button */}
             <button
-              onClick={handleAddToCart}
+              onClick={handleClaim}
               className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium transition-all duration-150 active:scale-95"
               style={{
                 fontFamily: 'DM Sans, sans-serif',
-                background: inCart ? 'oklch(0.22 0.04 40)' : 'oklch(0.55 0.14 38)',
+                background: (!product.stripeLink && inCart) ? 'oklch(0.22 0.04 40)' : 'oklch(0.55 0.14 38)',
                 color: 'oklch(0.97 0.02 85)',
                 border: '1.5px solid oklch(0.22 0.04 40)',
               }}
-              aria-label={inCart ? 'Claimed' : 'Claim this piece'}
+              aria-label={(!product.stripeLink && inCart) ? 'Claimed' : 'Claim this piece'}
             >
-              {inCart ? (
+              {(!product.stripeLink && inCart) ? (
                 <>
                   <Check size={12} />
                   <span className="hidden sm:inline">Claimed</span>
