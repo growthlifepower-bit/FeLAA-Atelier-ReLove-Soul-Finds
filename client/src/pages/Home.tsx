@@ -6,6 +6,9 @@
 
 import ProductCard from '@/components/ProductCard';
 import { CATEGORIES, getFeaturedProducts, getNewArrivals } from '@/lib/products';
+import { ArrowRight, Recycle, Heart, Sparkles, Package, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'wouter';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 const HOME_TILES = [
   ...CATEGORIES,
@@ -19,9 +22,6 @@ const HOME_TILES = [
     href: '/felaa',
   },
 ];
-import { ArrowRight, Recycle, Heart, Sparkles, Package, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'wouter';
-import { useEffect, useRef, useState, useCallback } from 'react';
 
 const SLIDES = [
   {
