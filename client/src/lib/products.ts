@@ -371,7 +371,7 @@ export const CATEGORIES = [
     label: 'FeLAA NuMode',
     shortLabel: 'Clothing',
     description: 'Upcycled & one-of-a-kind wearables',
-    image: '/felaa-numode.jpg',
+    image: '/felaa-numode-category.jpg',
     count: 6,
     emoji: '👗',
     href: '/relove-soul-finds',
