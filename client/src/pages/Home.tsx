@@ -16,7 +16,7 @@ const HOME_TILES = [
     id: 'felaa-atelier',
     label: 'FeLAA Atelier',
     description: 'Original designs & symbolic pieces',
-    image: 'https://images.unsplash.com/photo-1536766820879-059fec98ec0a?w=800&q=80',
+    image: '/felaa-atelier-category.jpg',
     count: null as number | null,
     emoji: '✦',
     href: '/felaa',
