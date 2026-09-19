@@ -432,7 +432,7 @@ export default function Home() {
               className="text-base leading-relaxed"
               style={{ fontFamily: 'DM Sans, sans-serif', color: 'oklch(0.40 0.04 50)' }}
             >
-              FeLAÁ Boutique is home to Relove Soul Finds and FeLAA Atelier — two arms of the same living practice. We source soulful collectibles, upcycle clothing and art, and rescue furniture, because the best things are the ones that carry a story.
+              FeLAÁ Boutique is home to FeLAA Atelier and FeLAA NuMode — two arms of the same living practice. We design soulful apparel & jewellery collections, and upgrade clothing & art with a breath of new life, because the best things are the ones that carry a story.
             </p>
           </div>
 
