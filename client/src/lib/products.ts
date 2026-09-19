@@ -368,10 +368,10 @@ export const PRODUCTS: Product[] = [
 export const CATEGORIES = [
   {
     id: 'clothing' as const,
-    label: 'Relove Soul Finds',
+    label: 'FeLAA NuMode',
     shortLabel: 'Clothing',
     description: 'Upcycled & one-of-a-kind wearables',
-    image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80',
+    image: '/felaa-numode.jpg',
     count: 6,
     emoji: '👗',
     href: '/relove-soul-finds',
