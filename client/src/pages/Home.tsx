@@ -16,7 +16,7 @@ const HOME_TILES = [
     id: 'felaa-atelier',
     label: 'FeLAA Atelier',
     description: 'Original designs & symbolic pieces',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/felaa-hero-home-RFYR2z2AugrsBX9BUMSAMi.webp',
+    image: 'https://images.unsplash.com/photo-1536766820879-059fec98ec0a?w=800&q=80',
     count: null as number | null,
     emoji: '✦',
     href: '/felaa',
@@ -31,7 +31,7 @@ const SLIDES = [
     accentIndex: -1,
     subtext: 'A symbolic lifestyle atelier exploring ritual design, sonic anthropology, contemporary ancestral abstraction, and spiritual folk-modernism.',
     ctas: [{ label: 'Discover FeLAA Atelier', href: '/felaa', primary: true }],
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/felaa-hero-home-RFYR2z2AugrsBX9BUMSAMi.webp',
+    image: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=1400&q=80',
   },
   {
     id: 'relove',
@@ -43,7 +43,7 @@ const SLIDES = [
       { label: 'Shop the Collection', href: '/shop', primary: true },
       { label: 'New Arrivals', href: '/shop?category=clothing', primary: false },
     ],
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/hero-banner-3jgP238RW3WaCGjynGDEQF.webp',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1400&q=80',
   },
 ];
 

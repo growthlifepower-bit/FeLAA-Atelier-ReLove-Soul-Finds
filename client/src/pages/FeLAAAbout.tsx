@@ -11,7 +11,7 @@ export default function FeLAAAbout() {
       {/* Hero Section */}
       <section className="relative w-full h-96 overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/felaa-hero-home-RFYR2z2AugrsBX9BUMSAMi.webp"
+          src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=1200&q=80"
           alt="FeLAA Atelier"
           className="w-full h-full object-cover"
         />
@@ -79,17 +79,17 @@ export default function FeLAAAbout() {
                 {
                   title: "Couture Mastery",
                   desc: "Refined finishing, disciplined handling, and garment logic built through repetition.",
-                  image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/felaa-hero-couture-B5tNTWBaR954fDwhyjFKHY.webp",
+                  image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80",
                 },
                 {
                   title: "Textile Relief",
                   desc: "Material studies shaped by tactility, depth, and the quiet architecture of folded cloth.",
-                  image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/felaa-hero-textile-dpoRypG8gN84uaUdMRNqf8.webp",
+                  image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80",
                 },
                 {
                   title: "Pattern Engineering",
                   desc: "Measured transitions from sketch to structure, where proportion and movement are resolved.",
-                  image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/felaa-hero-pattern-mumqE4fKgtTUEC7Jozikk6.webp",
+                  image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&q=80",
                 },
               ].map((discipline) => (
                 <div
