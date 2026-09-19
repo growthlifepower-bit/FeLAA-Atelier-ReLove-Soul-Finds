@@ -36,7 +36,7 @@ const SLIDES = [
     accentIndex: -1,
     subtext: 'A symbolic lifestyle atelier exploring ritual design, sonic anthropology, contemporary ancestral abstraction, and spiritual folk-modernism.',
     ctas: [{ label: 'Discover FeLAA Atelier', href: '/felaa', primary: true }],
-    image: 'https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=1400&q=80',
+    image: '/felaa-atelier-hero.jpg',
   },
   {
     id: 'relove',
