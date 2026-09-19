@@ -390,7 +390,7 @@ export const CATEGORIES = [
     label: 'Art',
     shortLabel: 'Art',
     description: 'Upcycled art, objects & artefacts',
-    image: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80',
+    image: '/felaa-numode.jpg',
     count: 6,
     emoji: '🎨',
   },
