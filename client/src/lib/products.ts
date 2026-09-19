@@ -202,6 +202,15 @@ export const PRODUCTS: Product[] = [
 
 export const CATEGORIES = [
   {
+    id: 'art' as const,
+    label: 'Art',
+    shortLabel: 'Art',
+    description: 'Upcycled art, objects & artefacts',
+    image: '/felaa-numode.jpg',
+    count: 6,
+    emoji: '🎨',
+  },
+  {
     id: 'clothing' as const,
     label: 'FeLAA NuMode',
     shortLabel: 'Clothing',
@@ -210,15 +219,6 @@ export const CATEGORIES = [
     count: 6,
     emoji: '👗',
     href: '/relove-soul-finds',
-  },
-  {
-    id: 'art' as const,
-    label: 'Art',
-    shortLabel: 'Art',
-    description: 'Upcycled art, objects & artefacts',
-    image: '/felaa-numode.jpg',
-    count: 6,
-    emoji: '🎨',
   },
   {
     id: 'jewelry' as const,

@@ -10,17 +10,22 @@ import { ArrowRight, Recycle, Heart, Sparkles, Package, ChevronLeft, ChevronRigh
 import { Link } from 'wouter';
 import { useEffect, useRef, useState, useCallback } from 'react';
 
+const felaaAtelierTile = {
+  id: 'felaa-atelier',
+  label: 'FeLAA Atelier',
+  description: 'Original designs & symbolic pieces',
+  image: '/felaa-atelier-category.jpg',
+  count: null as number | null,
+  emoji: '✦',
+  href: '/felaa',
+};
+
+// Art, FeLAA Atelier, FeLAA NuMode, Jewelry — alphabetical
 const HOME_TILES = [
-  ...CATEGORIES,
-  {
-    id: 'felaa-atelier',
-    label: 'FeLAA Atelier',
-    description: 'Original designs & symbolic pieces',
-    image: '/felaa-atelier-category.jpg',
-    count: null as number | null,
-    emoji: '✦',
-    href: '/felaa',
-  },
+  CATEGORIES[0], // Art
+  felaaAtelierTile,
+  CATEGORIES[1], // FeLAA NuMode
+  CATEGORIES[2], // Jewelry
 ];
 
 const SLIDES = [
