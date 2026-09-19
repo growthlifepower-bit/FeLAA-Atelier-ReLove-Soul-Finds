@@ -13,9 +13,7 @@ const NAV_LINKS = [
   { href: '/shop', label: 'Shop All' },
   { href: '/shop?category=art', label: 'Art' },
   { href: '/shop?category=clothing', label: 'Clothing' },
-  { href: '/shop?category=collectibles', label: 'Collectibles' },
-  { href: '/shop?category=furniture', label: 'Furniture' },
-  { href: '/shop?category=jewelry', label: 'Jewelry' },
+{ href: '/shop?category=jewelry', label: 'Jewelry' },
   { href: '/relove-soul-finds', label: 'FeLAA NuMode' },
   { href: '/felaa', label: 'FeLAA Atelier' },
 ]
