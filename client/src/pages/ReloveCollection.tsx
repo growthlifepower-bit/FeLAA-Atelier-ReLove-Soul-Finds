@@ -59,7 +59,7 @@ export default function ReloveCollection() {
       {/* ── HERO ───────────────────────────────────────────────────────── */}
       <section className="relative w-full overflow-hidden" style={{ height: '420px' }}>
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663721448837/Tiz4gBHdGyBwEgDj9BYoTS/hero-banner-3jgP238RW3WaCGjynGDEQF.webp"
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80"
           alt="Relove Soul Finds — vintage & upcycled treasures"
           className="w-full h-full object-cover"
         />
