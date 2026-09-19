@@ -36,7 +36,7 @@ const SLIDES = [
   {
     id: 'relove',
     label: '✦ Treasures with a past',
-    headline: ['ReLove', 'Soul', 'Finds'],
+    headline: ['FeLAA', 'NuMode'],
     accentIndex: 1,
     subtext: 'Soulful collectibles, upcycled art and apparel, nostalgic toys, and handcrafted + reworked furniture — loved into the future.',
     ctas: [
