@@ -280,12 +280,12 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Category grid — 2 cols mobile, 3 cols desktop */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          {/* Category grid — 2 cols mobile, 2×2 desktop */}
+          <div className="grid grid-cols-2 gap-3 md:gap-5">
             {HOME_TILES.map((cat, i) => (
               <Link key={cat.id} href={cat.href ?? `/shop?category=${cat.id}`}>
                 <div
-                  className={`group relative overflow-hidden aspect-[3/4] cursor-pointer stamp-card ${categoriesRef.inView ? 'animate-fade-up' : 'opacity-0'}`}
+                  className={`group relative overflow-hidden aspect-[3/4] md:aspect-[4/3] cursor-pointer stamp-card ${categoriesRef.inView ? 'animate-fade-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${i * 80}ms` }}
                 >
                   <img
@@ -299,21 +299,21 @@ export default function Home() {
                       background: 'linear-gradient(to top, oklch(0.22 0.04 40 / 0.85) 0%, oklch(0.22 0.04 40 / 0.2) 60%, transparent 100%)',
                     }}
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5">
                     <div
-                      className="text-lg mb-0.5"
+                      className="text-lg md:text-2xl mb-0.5"
                       style={{ lineHeight: 1 }}
                     >
                       {cat.emoji}
                     </div>
                     <h3
-                      className="text-sm font-bold leading-tight"
+                      className="text-sm md:text-xl font-bold leading-tight"
                       style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.97 0.02 85)' }}
                     >
                       {cat.label}
                     </h3>
                     <p
-                      className="text-[10px] mt-0.5"
+                      className="text-[10px] md:text-xs mt-0.5"
                       style={{ fontFamily: 'Courier Prime, monospace', color: 'oklch(0.72 0.14 80)' }}
                     >
                       {cat.count != null ? `${cat.count} items` : 'Explore'}
