@@ -48,8 +48,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'c1',
     name: 'Reverie — Ivory Cowl Slip Midi',
-    price: 68,
-    originalPrice: 120,
+    price: 89,
     category: 'clothing',
     description: 'A draped ivory cowl neck and ruched side seam in liquid satin — sculpted to move, designed to linger. Spaghetti straps, midi length with thigh-high split. An FeLAA Atelier original.',
     condition: 'Excellent',
@@ -63,7 +62,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'c2',
     name: 'Blossom — Rose Lace Cold-Shoulder Midi',
-    price: 45,
+    price: 145,
     category: 'clothing',
     description: 'All-over floral lace in blush rose with a cold-shoulder halter neckline, balloon cuffs and a scalloped A-line hem. Made to your measurements in your chosen lace variant. An FeLAA Atelier original.',
     condition: 'Excellent',
@@ -77,7 +76,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'c3',
     name: 'Crimson Garden — Jacquard Off-Shoulder Midi',
-    price: 65,
+    price: 135,
     category: 'clothing',
     description: 'Rich navy and crimson floral jacquard in a structured off-shoulder silhouette with ruffle cuffs and a fitted pencil skirt. Statement evening dressing at its most intentional. Made to measure.',
     condition: 'Excellent',
@@ -91,7 +90,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'c4',
     name: 'Verdure — Olive Twist-Front Maxi',
-    price: 38,
+    price: 120,
     category: 'clothing',
     description: 'Deep olive stretch fabric in a sleeveless mock-neck silhouette with a gathered twist knot at the waist. Clean, commanding, effortless. Made to your measurements.',
     condition: 'Excellent',
@@ -105,7 +104,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'c5',
     name: 'Soleil — Ankara Crop & Wide-Leg Linen Set',
-    price: 38,
+    price: 58,
     category: 'clothing',
     description: 'A vibrant ankara wax print crop top paired with wide-leg sunshine yellow linen trousers. Roots and rhythm in one look. Choose your ankara print, made to your measurements.',
     condition: 'Excellent',
@@ -119,7 +118,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'c6',
     name: 'Butterfly Effect — Blue Ankara Mini',
-    price: 52,
+    price: 125,
     category: 'clothing',
     description: 'Royal blue ankara butterfly print in a fit-and-flare silhouette with a sweetheart bodice, spaghetti straps and pockets. Joy in motion. Made to measure in your chosen ankara fabric.',
     condition: 'Excellent',
