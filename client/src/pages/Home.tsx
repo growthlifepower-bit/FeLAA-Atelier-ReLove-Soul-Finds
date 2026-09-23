@@ -326,6 +326,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── EDITORIAL BREAK (parallax) ────────────────────────────────── */}
+      <section
+        className="relative overflow-hidden flex items-center justify-center"
+        style={{
+          minHeight: '55vh',
+          backgroundImage: 'url(/felaa-editorial-break.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{ background: 'oklch(0.22 0.04 40 / 0.52)' }}
+        />
+        <div className="relative z-10 text-center px-6 py-16">
+          <p
+            className="text-[10px] uppercase tracking-[0.3em] mb-4"
+            style={{ fontFamily: 'Courier Prime, monospace', color: 'oklch(0.72 0.14 80)' }}
+          >
+            People · Places · Patterns · Purpose
+          </p>
+          <h2
+            className="text-4xl sm:text-5xl md:text-6xl font-black italic mb-6"
+            style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.97 0.02 85)', lineHeight: 1 }}
+          >
+            Wear a deeper story.
+          </h2>
+          <Link
+            href="/felaa"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:gap-3"
+            style={{
+              fontFamily: 'DM Sans, sans-serif',
+              background: 'oklch(0.55 0.14 38)',
+              color: 'oklch(0.97 0.02 85)',
+              border: '2px solid oklch(0.97 0.02 85)',
+            }}
+          >
+            Discover FeLAA Atelier <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
       {/* ── FEATURED PRODUCTS ────────────────────────────────────────────── */}
       <section
         className="py-12 md:py-16"
