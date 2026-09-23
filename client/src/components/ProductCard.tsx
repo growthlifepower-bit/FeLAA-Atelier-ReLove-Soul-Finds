@@ -59,7 +59,20 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
 
           {/* Overlay badges */}
           <div className="absolute top-2 left-2 flex flex-col gap-1">
-            {product.isNew && (
+            {product.isPreorder && (
+              <span
+                className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider"
+                style={{
+                  fontFamily: 'Courier Prime, monospace',
+                  background: 'oklch(0.22 0.04 40)',
+                  color: 'oklch(0.72 0.14 80)',
+                  border: '1.5px solid oklch(0.72 0.14 80)',
+                }}
+              >
+                Pre-order
+              </span>
+            )}
+            {product.isNew && !product.isPreorder && (
               <span
                 className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider"
                 style={{
@@ -167,7 +180,7 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
               )}
             </div>
 
-            {/* Claim button */}
+            {/* Claim / Pre-order button */}
             <button
               onClick={handleClaim}
               className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium transition-all duration-150 active:scale-95"
@@ -177,9 +190,14 @@ export default function ProductCard({ product, animationDelay = 0 }: ProductCard
                 color: 'oklch(0.97 0.02 85)',
                 border: '1.5px solid oklch(0.22 0.04 40)',
               }}
-              aria-label={(!product.purchaseLink && inCart) ? 'Claimed' : 'Claim this piece'}
+              aria-label={product.isPreorder ? 'Pre-order this piece' : (!product.purchaseLink && inCart) ? 'Claimed' : 'Claim this piece'}
             >
-              {(!product.purchaseLink && inCart) ? (
+              {product.isPreorder ? (
+                <>
+                  <ShoppingBag size={12} />
+                  <span className="hidden sm:inline">Pre-order</span>
+                </>
+              ) : (!product.purchaseLink && inCart) ? (
                 <>
                   <Check size={12} />
                   <span className="hidden sm:inline">Claimed</span>
