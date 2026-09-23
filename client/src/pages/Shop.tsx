@@ -74,14 +74,33 @@ export default function Shop() {
           >
             Browse
           </p>
-          <h1
-            className="text-4xl md:text-5xl font-bold"
-            style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.97 0.02 85)' }}
-          >
-            {activeCategory === 'all'
-              ? 'All Finds'
-              : CATEGORIES.find(c => c.id === activeCategory)?.label || 'Shop'}
-          </h1>
+          {activeCategory === 'clothing' ? (
+            <h1
+              className="text-4xl md:text-5xl font-bold leading-tight"
+              style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.97 0.02 85)' }}
+            >
+              FeLAA Atelier
+              <span style={{ color: 'oklch(0.72 0.14 80)' }}> & </span>
+              NuMode
+            </h1>
+          ) : (
+            <h1
+              className="text-4xl md:text-5xl font-bold"
+              style={{ fontFamily: 'Fraunces, serif', color: 'oklch(0.97 0.02 85)' }}
+            >
+              {activeCategory === 'all'
+                ? 'All Finds'
+                : CATEGORIES.find(c => c.id === activeCategory)?.label || 'Shop'}
+            </h1>
+          )}
+          {activeCategory === 'clothing' && (
+            <p
+              className="mt-1 text-xs uppercase tracking-widest"
+              style={{ fontFamily: 'Courier Prime, monospace', color: 'oklch(0.72 0.14 80 / 0.7)' }}
+            >
+              Made-to-measure originals · Upcycled & reworked finds
+            </p>
+          )}
           <p
             className="mt-1 text-sm opacity-60"
             style={{ fontFamily: 'DM Sans, sans-serif', color: 'oklch(0.93 0.04 80)' }}
