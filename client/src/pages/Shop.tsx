@@ -24,7 +24,7 @@ export default function Shop() {
   const [activeCategory, setActiveCategory] = useState<Category>(urlCategory);
   const [sortBy, setSortBy] = useState('featured');
   const [showFilters, setShowFilters] = useState(false);
-  const [priceMax, setPriceMax] = useState(300);
+  const [priceMax, setPriceMax] = useState(() => Math.max(...PRODUCTS.map(p => p.price)));
 
   useEffect(() => {
     setActiveCategory(urlCategory);
